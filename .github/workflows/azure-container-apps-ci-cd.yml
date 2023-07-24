@@ -1,7 +1,7 @@
 name: Build and deploy a container to an Azure Container Apps - ACA
 
 env:
-  IMAGE_NAME: alexandrotf/containerapps-album-api
+  IMAGE_NAME: alexandrotf/backend
   CONTAINERAPPS_APP: album-backend-api
   CONTAINERAPPS_ENVIRONMENT: test-app-env
   RESOURCE_GROUP: Test3
