@@ -31,8 +31,8 @@ jobs:
         uses: docker/login-action@v1.10.0
         with:
           registry: ghcr.io
-          username: ${{ github.actor }}
-          password: ${{ github.token }}
+          username: ${{ secrets.AZUSER_NAME }}
+          password: ${{ secrets.AZPAT }}
 
       - name: Build and push container image to registry
         uses: docker/build-push-action@v2
