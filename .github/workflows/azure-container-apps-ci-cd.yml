@@ -14,8 +14,8 @@ on:
   workflow_dispatch:
 
 permissions:
-  contents: read
-  packages: write
+  contents: read/write
+  packages: read/write
 
 jobs:
   build-push-container-image:
