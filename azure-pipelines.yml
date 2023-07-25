@@ -15,7 +15,7 @@ variables:
   IMAGE_NAME: alexandrotf/backend-azuredevops
   CONTAINERAPPS_APP: backend-azuredevops
   CONTAINERAPPS_ENVIRONMENT: test-app-env
-  RESOURCE_GROUP: Test 3
+  RESOURCE_GROUP: Test3
   TAG: '$(Build.BuildId)'
 
 stages:
