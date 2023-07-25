@@ -12,10 +12,10 @@ resources:
 - repo: self
 
 variables:
-  IMAGE_NAME: houssemdocker/album-backend-api
-  CONTAINERAPPS_APP: album-backend-api
-  CONTAINERAPPS_ENVIRONMENT: aca-environment
-  RESOURCE_GROUP: rg-containerapps-azure-pipelines
+  IMAGE_NAME: alexandrotf/backend-azuredevops
+  CONTAINERAPPS_APP: backend-azuredevops
+  CONTAINERAPPS_ENVIRONMENT: test-app-env
+  RESOURCE_GROUP: Test 3
   TAG: '$(Build.BuildId)'
 
 stages:
