@@ -63,7 +63,7 @@ jobs:
       uses: azure/container-apps-deploy-action@v1
       with:
         registryUrl: ghcr.io
-        imageToDeploy: ghcr.io/${{ env.IMAGE_NAME }}::${{ steps.extract_branch.outputs.branch }}
+        imageToDeploy: ghcr.io/${{ env.IMAGE_NAME }}:${{ steps.extract_branch.outputs.branch }}
         targetPort: 3500
         ingress: external
         containerAppName: ${{ env.CONTAINERAPPS_APP }}
