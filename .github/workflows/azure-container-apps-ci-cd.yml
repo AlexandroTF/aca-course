@@ -43,7 +43,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ghcr.io/${{ env.IMAGE_NAME }}${{ steps.extract_branch.outputs.branch }}
+          tags: ghcr.io/${{ env.IMAGE_NAME }}:${{ steps.extract_branch.outputs.branch }}
           file: ./backend_api/backend_api_csharp/Dockerfile
           context: ./backend_api/backend_api_csharp
 
@@ -63,7 +63,7 @@ jobs:
       uses: azure/container-apps-deploy-action@v1
       with:
         registryUrl: ghcr.io
-        imageToDeploy: ghcr.io/${{ env.IMAGE_NAME }}:${GITHUB_REF##*/}
+        imageToDeploy: ghcr.io/${{ env.IMAGE_NAME }}::${{ steps.extract_branch.outputs.branch }}
         targetPort: 3500
         ingress: external
         containerAppName: ${{ env.CONTAINERAPPS_APP }}
