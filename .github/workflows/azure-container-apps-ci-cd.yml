@@ -22,6 +22,10 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Extract branch name
+        shell: bash
+        run: echo "branch=${GITHUB_HEAD_REF:-${GITHUB_REF#refs/heads/}}" >> $GITHUB_OUTPUT
+        id: extract_branch
       - name: Ckechout
         uses: actions/checkout@v3
 
@@ -39,7 +43,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          tags: ghcr.io/${{ env.IMAGE_NAME }}:${GITHUB_REF##*/}
+          tags: ghcr.io/${{ env.IMAGE_NAME }}${{ steps.extract_branch.outputs.branch }}
           file: ./backend_api/backend_api_csharp/Dockerfile
           context: ./backend_api/backend_api_csharp
 
